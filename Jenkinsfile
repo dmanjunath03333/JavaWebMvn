@@ -15,7 +15,7 @@ agent any
     
     stage ('Deploy') {
       steps {
-        sh "java -jar target/JavaWeb-0.0.1-SNAPSHOT.war"
+        sh "java -jar target/JavaWeb.war"
       }
     }
     
@@ -23,7 +23,7 @@ agent any
      
       steps { 
        
-        sh 'curl -X PUT -u admin:password -T target/JavaWeb-0.0.1-SNAPSHOT.war "http://34.220.250.148:8081/artifactory/libs-snapshot-local/JavaWeb-0.0.1-SNAPSHOT.war" '
+        sh 'curl -X PUT -u admin:password -T target/JavaWeb.war "http://34.220.250.148:8081/artifactory/libs-snapshot-local/JavaWeb.war" '
       }
     }
       
